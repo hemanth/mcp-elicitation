@@ -34,9 +34,11 @@ async def book_doctor_appointment(ctx: Context) -> str:
     if insurance_result.action != "accept":
         return "Appointment booking cancelled"
     
-    has_insurance = insurance_result.value == "yes"
-    return f"Doctor appointment booked for {patient_result.value} - {appointment_type_result.value} ({time_result.value} minutes, Insurance: {has_insurance})"
+    has_insurance = insurance_result.data == "yes"
+    return f"Doctor appointment booked for {patient_result.data} - {appointment_type_result.data} ({time_result.data} minutes, Insurance: {has_insurance})"
 
 # 5. Make the server runnable
 if __name__ == "__main__":
-    mcp.run(transport="http")
+    import sys
+    port = 8001 if "--port" in sys.argv and "8001" in sys.argv else 8000
+    mcp.run(transport="http", port=port)
