@@ -2,21 +2,24 @@
 
 A simple demo of FastMCP's elicitation feature for interactive user input during tool execution.
 
+https://github.com/user-attachments/assets/b8e456df-5dfc-4605-bd2e-2bf3c8feca30
+
+
 ## Quick Start
 
 1. **Install dependencies**:
    ```bash
-   pip install fastmcp
+   uv install fastmcp
    ```
 
 2. **Run the server**:
    ```bash
-   python server.py
+   uv run python server.py
    ```
 
 3. **Run the client** (in another terminal):
    ```bash
-   python client.py
+   uv run python client.py
    ```
 
 ## What it does
